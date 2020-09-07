@@ -2,10 +2,29 @@
 <p>
 	<%= @article.text %>
 </p>
+<br />
+<p>
+	Comments:
+</p>
+
+
+<% if @comments.length > 0 %>
+<% @comments.each do |comment| %>
+	<h3><%= comment.author %></h3>
+
+	<p>
+		<%= comment.body %>
+	</p>
+	<hr />
+<% end %>
+<% else %>
+	No comments yet! Be the first!
+<% end %>
 
 <p>
 <%= form_for([@article, @article.comments.build]) do |f| %>
 	<p>
+		Leave your comment here:<br />
 		<%= f.label :author %><br />
 		<%= f.text_field :author %>
 	</p>
