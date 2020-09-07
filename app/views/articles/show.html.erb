@@ -2,24 +2,21 @@
 <p>
 	<%= @article.text %>
 </p>
-<br />
-<p>
-	Comments:
-</p>
 
+	<h2>Comments:</h2>
 
-<% if @comments.length > 0 %>
-<% @comments.each do |comment| %>
-	<h3><%= comment.author %></h3>
-
+<% @article.comments.each do |comment| %>
 	<p>
-		<%= comment.body %>
+	<i><%= comment.author %> said:</i><br />
+	</p>
+	<p>
+		<%= comment.body %>	
 	</p>
 	<hr />
 <% end %>
-<% else %>
-	No comments yet! Be the first!
-<% end %>
+
+
+	<h2>Add comments:</h2>
 
 <p>
 <%= form_for([@article, @article.comments.build]) do |f| %>
