@@ -21,13 +21,11 @@
 <p>
 <%= form_for([@article, @article.comments.build]) do |f| %>
 	<p>
-		Leave your comment here:<br />
-		<%= f.label :author %><br />
-		<%= f.text_field :author %>
+		Leave your comment here, <%= current_user.username %>:<br />
+		<%= f.hidden_field :author, value: current_user.username %>
 	</p>
 
 	<p>
-		<%= f.label :body %><br />
 		<%= f.text_area :body %>
 	</p>
 
