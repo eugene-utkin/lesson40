@@ -15,7 +15,7 @@
 	<hr />
 <% end %>
 
-
+<% if user_signed_in? %>
 	<h2>Add comments:</h2>
 
 <p>
@@ -34,3 +34,7 @@
 	</p>
 <% end %>
 </p>
+<% else %>
+	<p> Please, <%= link_to 'Sign In', new_user_session_path %> to leave a comment.
+	</p>
+<% end %>
