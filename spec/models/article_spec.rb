@@ -10,4 +10,11 @@ describe Article do
     it { should have_many :comments }
   end
 
+  describe "#subject" do
+    it "returns the article title" do
+      article = create(:article, title: 'Hopper')
+      expect(article.subject).to eq 'Hopper'
+    end
+  end
+
 end
