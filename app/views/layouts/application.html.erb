@@ -15,11 +15,11 @@
         <div class="col-12">
           <% if user_signed_in? %>
 
-            Hello, <%= current_user.username %> | <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+            <%= t('layout.layout_hello', username: current_user.username) %> | <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
 
           <% else %>
 
-            <%= link_to 'Sign In', new_user_session_path %>
+            <%= link_to t('layout.layout_sign_in'), new_user_session_path %>
 
           <% end %>
           <p class="notice"><%= notice %></p>

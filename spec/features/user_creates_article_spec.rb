@@ -10,4 +10,17 @@ feature "Article Creation" do
 
     expect(page).to have_content 'New Article'
   end
+
+  scenario "allows user to create new article" do
+    visit new_article_path
+
+    fill_in :article_title, :with => 'Some Title'
+    fill_in :article_text, :with => 'Some Text!'
+
+    click_button 'Save Article'
+
+    expect(page).to have_content 'Some Title'
+    expect(page).to have_content 'Some Text!'
+    expect(page).to have_content 'Comments:'
+  end
 end

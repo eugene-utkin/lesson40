@@ -34,3 +34,20 @@ en:
 
   contacts:
     contact_us: "Contact Us!"
+
+  home:
+    index_title: "Home#index"
+    index_message: "Find me in app/views/home/index.html.erb"
+  
+  layout:
+    layout_hello: "Hello, %{username}!"
+    layout_sign_in: "Sign In!"
+
+  login:
+    login_title: "Log in"
+    login_email_field_title: "Email"
+    login_password_field_title: "Password"
+    login_remember_checkbox_title: "Remember me"
+    login_button: "Log in"
+    login_signup_link: "Sign up"
+    login_forgot_password: "Forgot your password?"
